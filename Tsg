@@ -1,0 +1,219 @@
+local SG = Instance.new("ScreenGui")
+local SGhub = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local Frame = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local Hitbox = Instance.new("TextBox")
+local TextLabel_2 = Instance.new("TextLabel")
+local UICorner_4 = Instance.new("UICorner")
+local UICorner_5 = Instance.new("UICorner")
+local Esp = Instance.new("TextBox")
+local TextLabel_3 = Instance.new("TextLabel")
+local UICorner_6 = Instance.new("UICorner")
+local UICorner_7 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local Frame_2 = Instance.new("Frame")
+local PlayerImage = Instance.new("ImageLabel")
+local PlayerName = Instance.new("TextLabel")
+
+--Properties:
+
+SG.Name = "SG"
+SG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+SG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+SGhub.Name = "SGhub"
+SGhub.Parent = SG
+SGhub.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+SGhub.Position = UDim2.new(0.232064426, 0, 0.19921875, 0)
+SGhub.Size = UDim2.new(0, 636, 0, 445)
+
+TextLabel.Parent = SGhub
+TextLabel.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+TextLabel.Size = UDim2.new(0, 636, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "SG Hub"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+UICorner.Parent = TextLabel
+
+UICorner_2.Parent = SGhub
+
+Frame.Parent = SGhub
+Frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Frame.Position = UDim2.new(0.323909461, 0, 0.112359554, 0)
+Frame.Size = UDim2.new(0, 429, 0, 395)
+
+UICorner_3.Parent = Frame
+
+Hitbox.Name = "Hitbox"
+Hitbox.Parent = Frame
+Hitbox.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
+Hitbox.Position = UDim2.new(0.0393560082, 0, 0.190883592, 0)
+Hitbox.Size = UDim2.new(0, 412, 0, 146)
+Hitbox.Visible = false
+Hitbox.ClearTextOnFocus = false
+Hitbox.Font = Enum.Font.SourceSans
+Hitbox.MultiLine = true
+Hitbox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+Hitbox.Text = "loadstring(game:HttpGet(('https://pastebin.com/p50ve1S5'),true))()"
+Hitbox.TextColor3 = Color3.fromRGB(0, 0, 0)
+Hitbox.TextScaled = true
+Hitbox.TextSize = 11.000
+Hitbox.TextWrapped = true
+
+TextLabel_2.Parent = Hitbox
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
+TextLabel_2.Position = UDim2.new(0, 0, -0.416487277, 0)
+TextLabel_2.Size = UDim2.new(0, 412, 0, 50)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Copy And Paste It"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextWrapped = true
+
+UICorner_4.Parent = TextLabel_2
+
+UICorner_5.Parent = Hitbox
+
+Esp.Name = "Esp"
+Esp.Parent = Frame
+Esp.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
+Esp.Position = UDim2.new(0.0393560082, 0, 0.190883592, 0)
+Esp.Size = UDim2.new(0, 413, 0, 146)
+Esp.Visible = false
+Esp.ClearTextOnFocus = false
+Esp.Font = Enum.Font.SourceSans
+Esp.MultiLine = true
+Esp.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+Esp.Text = "loadstring(game:HttpGet(('https://raw.githubusercontent.com/5carr3d/esp/main/main.lua'),true))()"
+Esp.TextColor3 = Color3.fromRGB(0, 0, 0)
+Esp.TextScaled = true
+Esp.TextSize = 11.000
+Esp.TextWrapped = true
+
+TextLabel_3.Parent = Esp
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
+TextLabel_3.Position = UDim2.new(0, 0, -0.416487277, 0)
+TextLabel_3.Size = UDim2.new(0, 413, 0, 50)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "Copy And Paste It"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextWrapped = true
+
+UICorner_6.Parent = TextLabel_3
+
+UICorner_7.Parent = Esp
+
+TextButton.Parent = SGhub
+TextButton.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
+TextButton.Position = UDim2.new(0, 0, 0.57303369, 0)
+TextButton.Size = UDim2.new(0, 206, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "ESP"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+UICorner_8.Parent = TextButton
+
+TextButton_2.Parent = SGhub
+TextButton_2.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
+TextButton_2.Position = UDim2.new(0, 0, 0.343820214, 0)
+TextButton_2.Size = UDim2.new(0, 206, 0, 57)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "Hitbox"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+
+UICorner_9.Parent = TextButton_2
+
+Frame_2.Parent = SGhub
+Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_2.BackgroundTransparency = 1.000
+Frame_2.Position = UDim2.new(0, 0, 0.112359554, 0)
+Frame_2.Size = UDim2.new(0, 206, 0, 103)
+
+PlayerImage.Name = "PlayerImage"
+PlayerImage.Parent = Frame_2
+PlayerImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerImage.BackgroundTransparency = 1.000
+PlayerImage.Size = UDim2.new(0, 98, 0, 96)
+PlayerImage.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+PlayerName.Name = "PlayerName"
+PlayerName.Parent = Frame_2
+PlayerName.Active = true
+PlayerName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName.BackgroundTransparency = 1.000
+PlayerName.Position = UDim2.new(0.475728154, 0, 0.252136678, 0)
+PlayerName.Size = UDim2.new(0, 108, 0, 44)
+PlayerName.Font = Enum.Font.SourceSans
+PlayerName.Text = "name"
+PlayerName.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName.TextScaled = true
+PlayerName.TextSize = 14.000
+PlayerName.TextWrapped = true
+
+-- Scripts:
+
+local function RCAMAV_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Frame.Esp.Visible = not script.Parent.Parent.Frame.Esp.Visible
+	end)
+end
+coroutine.wrap(RCAMAV_fake_script)()
+local function NXXD_fake_script() -- TextButton_2.LocalScript 
+	local script = Instance.new('LocalScript', TextButton_2)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Frame.Hitbox.Visible = not script.Parent.Parent.Frame.Hitbox.Visible
+	end)
+end
+coroutine.wrap(NXXD_fake_script)()
+local function AEDYVUR_fake_script() -- Frame_2.LocalScript 
+	local script = Instance.new('LocalScript', Frame_2)
+
+	local frame = script.Parent
+	
+	
+	
+	local player = game.Players.LocalPlayer
+	
+	
+	
+	local userId = player.UserId
+	
+	local thumbType = Enum.ThumbnailType.AvatarBust
+	
+	local thumbSize = Enum.ThumbnailSize.Size420x420
+	
+	local content, isReady = game.Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
+	
+	
+	
+	
+	
+	frame.PlayerImage.Image = content
+	
+	frame.PlayerName.Text = player.Name
+end
+coroutine.wrap(AEDYVUR_fake_script)()

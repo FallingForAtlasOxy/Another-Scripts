@@ -1,219 +1,287 @@
-local SG = Instance.new("ScreenGui")
-local SGhub = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local UICorner = Instance.new("UICorner")
-local UICorner_2 = Instance.new("UICorner")
-local Frame = Instance.new("Frame")
-local UICorner_3 = Instance.new("UICorner")
-local Hitbox = Instance.new("TextBox")
-local TextLabel_2 = Instance.new("TextLabel")
-local UICorner_4 = Instance.new("UICorner")
-local UICorner_5 = Instance.new("UICorner")
-local Esp = Instance.new("TextBox")
-local TextLabel_3 = Instance.new("TextLabel")
-local UICorner_6 = Instance.new("UICorner")
-local UICorner_7 = Instance.new("UICorner")
-local TextButton = Instance.new("TextButton")
-local UICorner_8 = Instance.new("UICorner")
-local TextButton_2 = Instance.new("TextButton")
-local UICorner_9 = Instance.new("UICorner")
-local Frame_2 = Instance.new("Frame")
-local PlayerImage = Instance.new("ImageLabel")
-local PlayerName = Instance.new("TextLabel")
+local flag = false;
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local humanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
 
---Properties:
+local PlanterGUIv11 = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local TitleLabel = Instance.new("TextLabel")
+local AutoHarvest = Instance.new("TextButton")
+local AutoPlant = Instance.new("TextButton")
+local PlotBuilder = Instance.new("TextButton")
+local FarmingLabel = Instance.new("TextLabel")
+local PlantType = Instance.new("TextBox")
+local Instruction = Instance.new("TextLabel")
 
-SG.Name = "SG"
-SG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-SG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+PlanterGUIv11.Name = "Planter GUI v1.1"
+PlanterGUIv11.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+PlanterGUIv11.DisplayOrder = 10
 
-SGhub.Name = "SGhub"
-SGhub.Parent = SG
-SGhub.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-SGhub.Position = UDim2.new(0.232064426, 0, 0.19921875, 0)
-SGhub.Size = UDim2.new(0, 636, 0, 445)
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = PlanterGUIv11
+MainFrame.BackgroundColor3 = Color3.fromRGB(79, 79, 79)
+MainFrame.BackgroundTransparency = 0.500
+MainFrame.BorderSizePixel = 4
+MainFrame.Position = UDim2.new(0.0744000003, 0, 0.42892459, 0)
+MainFrame.Size = UDim2.new(0.156799972, 0, 0.247218788, 0)
+-- draggable function
+ 
+local UserInputService = game:GetService("UserInputService")
+ 
+       local gui = MainFrame
+ 
+       local dragging
+       local dragInput
+       local dragStart
+       local startPos
+ 
+       local function update(input)
+        local delta = input.Position - dragStart
+        gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+       end
+ 
+       gui.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = gui.Position
+ 
+        input.Changed:Connect(function()
+        if input.UserInputState == Enum.UserInputState.End then
+        dragging = false
+        end
+        end)
+        end
+       end)
+ 
+       gui.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+        end
+       end)
+ 
+       UserInputService.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+        update(input)
+        end
+       end)
+--end of draggable function
 
-TextLabel.Parent = SGhub
-TextLabel.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
-TextLabel.Size = UDim2.new(0, 636, 0, 50)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "SG Hub"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Parent = MainFrame
+TitleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.BackgroundTransparency = 1.000
+TitleLabel.Position = UDim2.new(0.24, 0, 0.1, 0)
+TitleLabel.Size = UDim2.new(0, 172, 0, 29)
+TitleLabel.Font = Enum.Font.Unknown
+TitleLabel.Text = "Farmer GUI v1.1"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.TextScaled = true
+TitleLabel.TextSize = 23.000
+TitleLabel.TextWrapped = true
 
-UICorner.Parent = TextLabel
+PlantType.Name = "PlantType"
+PlantType.Parent = MainFrame
+PlantType.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlantType.BackgroundTransparency = 0.750
+PlantType.BorderColor3 = Color3.fromRGB(255, 255, 255)
+PlantType.BorderSizePixel = 0
+PlantType.Position = UDim2.new(0.505102098, 0, 0.584999979, 0)
+PlantType.Size = UDim2.new(0, 84, 0, 23)
+PlantType.Font = Enum.Font.Roboto
+PlantType.Text = "Crop Type"
+PlantType.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlantType.TextSize = 14.000
 
-UICorner_2.Parent = SGhub
-
-Frame.Parent = SGhub
-Frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-Frame.Position = UDim2.new(0.323909461, 0, 0.112359554, 0)
-Frame.Size = UDim2.new(0, 429, 0, 395)
-
-UICorner_3.Parent = Frame
-
-Hitbox.Name = "Hitbox"
-Hitbox.Parent = Frame
-Hitbox.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
-Hitbox.Position = UDim2.new(0.0393560082, 0, 0.190883592, 0)
-Hitbox.Size = UDim2.new(0, 412, 0, 146)
-Hitbox.Visible = false
-Hitbox.ClearTextOnFocus = false
-Hitbox.Font = Enum.Font.SourceSans
-Hitbox.MultiLine = true
-Hitbox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
-Hitbox.Text = "loadstring(game:HttpGet(('https://pastebin.com/p50ve1S5'),true))()"
-Hitbox.TextColor3 = Color3.fromRGB(0, 0, 0)
-Hitbox.TextScaled = true
-Hitbox.TextSize = 11.000
-Hitbox.TextWrapped = true
-
-TextLabel_2.Parent = Hitbox
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
-TextLabel_2.Position = UDim2.new(0, 0, -0.416487277, 0)
-TextLabel_2.Size = UDim2.new(0, 412, 0, 50)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "Copy And Paste It"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextWrapped = true
-
-UICorner_4.Parent = TextLabel_2
-
-UICorner_5.Parent = Hitbox
-
-Esp.Name = "Esp"
-Esp.Parent = Frame
-Esp.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
-Esp.Position = UDim2.new(0.0393560082, 0, 0.190883592, 0)
-Esp.Size = UDim2.new(0, 413, 0, 146)
-Esp.Visible = false
-Esp.ClearTextOnFocus = false
-Esp.Font = Enum.Font.SourceSans
-Esp.MultiLine = true
-Esp.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
-Esp.Text = "loadstring(game:HttpGet(('https://raw.githubusercontent.com/5carr3d/esp/main/main.lua'),true))()"
-Esp.TextColor3 = Color3.fromRGB(0, 0, 0)
-Esp.TextScaled = true
-Esp.TextSize = 11.000
-Esp.TextWrapped = true
-
-TextLabel_3.Parent = Esp
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
-TextLabel_3.Position = UDim2.new(0, 0, -0.416487277, 0)
-TextLabel_3.Size = UDim2.new(0, 413, 0, 50)
-TextLabel_3.Font = Enum.Font.SourceSans
-TextLabel_3.Text = "Copy And Paste It"
-TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextWrapped = true
-
-UICorner_6.Parent = TextLabel_3
-
-UICorner_7.Parent = Esp
-
-TextButton.Parent = SGhub
-TextButton.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
-TextButton.Position = UDim2.new(0, 0, 0.57303369, 0)
-TextButton.Size = UDim2.new(0, 206, 0, 50)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "ESP"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-
-UICorner_8.Parent = TextButton
-
-TextButton_2.Parent = SGhub
-TextButton_2.BackgroundColor3 = Color3.fromRGB(108, 108, 108)
-TextButton_2.Position = UDim2.new(0, 0, 0.343820214, 0)
-TextButton_2.Size = UDim2.new(0, 206, 0, 57)
-TextButton_2.Font = Enum.Font.SourceSans
-TextButton_2.Text = "Hitbox"
-TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.TextScaled = true
-TextButton_2.TextSize = 14.000
-TextButton_2.TextWrapped = true
-
-UICorner_9.Parent = TextButton_2
-
-Frame_2.Parent = SGhub
-Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame_2.BackgroundTransparency = 1.000
-Frame_2.Position = UDim2.new(0, 0, 0.112359554, 0)
-Frame_2.Size = UDim2.new(0, 206, 0, 103)
-
-PlayerImage.Name = "PlayerImage"
-PlayerImage.Parent = Frame_2
-PlayerImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-PlayerImage.BackgroundTransparency = 1.000
-PlayerImage.Size = UDim2.new(0, 98, 0, 96)
-PlayerImage.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
-
-PlayerName.Name = "PlayerName"
-PlayerName.Parent = Frame_2
-PlayerName.Active = true
-PlayerName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-PlayerName.BackgroundTransparency = 1.000
-PlayerName.Position = UDim2.new(0.475728154, 0, 0.252136678, 0)
-PlayerName.Size = UDim2.new(0, 108, 0, 44)
-PlayerName.Font = Enum.Font.SourceSans
-PlayerName.Text = "name"
-PlayerName.TextColor3 = Color3.fromRGB(255, 255, 255)
-PlayerName.TextScaled = true
-PlayerName.TextSize = 14.000
-PlayerName.TextWrapped = true
-
--- Scripts:
-
-local function RCAMAV_fake_script() -- TextButton.LocalScript 
-	local script = Instance.new('LocalScript', TextButton)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Frame.Esp.Visible = not script.Parent.Parent.Frame.Esp.Visible
-	end)
+local function getShovel()
+    for i, tool in ipairs(Player.Backpack:GetChildren()) do
+        for j, item in ipairs(tool:WaitForChild("toolModel"):GetChildren()) do
+            if item.BrickColor == BrickColor.new("Pine Cone") then
+                return tonumber(tool.Name)
+            else
+                print("You have no shovel equipped!")
+                break
+            end
+        end
+    end
 end
-coroutine.wrap(RCAMAV_fake_script)()
-local function NXXD_fake_script() -- TextButton_2.LocalScript 
-	local script = Instance.new('LocalScript', TextButton_2)
 
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Frame.Hitbox.Visible = not script.Parent.Parent.Frame.Hitbox.Visible
-	end)
+local function getAxe()
+    for i, tool in ipairs(Player.Backpack:GetChildren()) do
+        for j, item in ipairs(tool:WaitForChild("toolModel"):GetChildren()) do
+            if item.Size == Vector3.new(0.3610214591026306, 0.9464491009712219, 1.0816861391067505) then
+                return tonumber(tool.Name)
+            else
+                print("You have no axe equipped!")
+                break
+            end
+        end
+    end
 end
-coroutine.wrap(NXXD_fake_script)()
-local function AEDYVUR_fake_script() -- Frame_2.LocalScript 
-	local script = Instance.new('LocalScript', Frame_2)
 
-	local frame = script.Parent
-	
-	
-	
-	local player = game.Players.LocalPlayer
-	
-	
-	
-	local userId = player.UserId
-	
-	local thumbType = Enum.ThumbnailType.AvatarBust
-	
-	local thumbSize = Enum.ThumbnailSize.Size420x420
-	
-	local content, isReady = game.Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
-	
-	
-	
-	
-	
-	frame.PlayerImage.Image = content
-	
-	frame.PlayerName.Text = player.Name
+local function getCropID(croptype)
+    if(croptype:lower() == "wheat") then
+        return "rbxassetid://11195659284"
+    elseif(croptype:lower() == "carrot") then
+        return "rbxassetid://11195658486"
+    elseif(croptype:lower() == "pepper") then
+        return "rbxassetid://12334856111"
+    elseif(croptype:lower() == "cabbage") then
+        return "rbxassetid://12334757352"
+    elseif(croptype:lower() == "berry") then
+        return "rbxassetid://11183450140"
+    else
+        return "rbxassetid://11195659284"
+    end
 end
-coroutine.wrap(AEDYVUR_fake_script)()
+
+local function getCropType(croptype)
+    -- Crop Types: 95 carrot, 107 wheat, 113 berry, 210 cabbage, 211 pepper
+    -- Meshid: rbxassetid://11195658486, cork rbxassetid://11195659284, bright green rbxassetid://11183450140, rbxassetid://12334757352, maroon (rbxassetid://12334856111)
+    if(croptype:lower() == "wheat") then
+        return 107
+    elseif(croptype:lower() == "carrot") then
+        return 95
+    elseif(croptype:lower() == "pepper") then
+        return 211
+    elseif(croptype:lower() == "cabbage") then
+        return 210
+    elseif(croptype:lower() == "berry") then
+        return 113
+    else
+        return 107
+    end
+end
+
+AutoHarvest.Name = "AutoHarvest"
+AutoHarvest.Parent = MainFrame
+AutoHarvest.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AutoHarvest.Position = UDim2.new(0.0387657396, 0, 0.748831928, 0)
+AutoHarvest.Size = UDim2.new(0.396454066, 0, 0.114661798, 0)
+AutoHarvest.Font = Enum.Font.Unknown
+AutoHarvest.Text = "Radial Harvest"
+AutoHarvest.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoHarvest.TextScaled = true
+AutoHarvest.TextSize = 14.000
+AutoHarvest.TextWrapped = true
+
+local function GetDistance(p1,p2)
+  local Distance = (p1.Position - p2.Position).magnitude
+  return Distance
+end
+
+local function harvestCrop()
+      -- farm:FindFirstChild("plant"):FindFirstChildWhichIsA("MeshPart").MeshId == getCropID(PlantType.Text)
+    for i, farm in ipairs(game:GetService("Workspace").farmland:GetChildren()) do
+        if farm:FindFirstChild("plant") and GetDistance(farm:FindFirstChild("farmland"), humanoidRootPart) >= -25 and farm then
+            print("Successfully harvested a crop")
+            local args = {
+                [1] = getAxe(),
+                [2] = farm
+            }
+           
+            game:GetService("ReplicatedStorage"):WaitForChild("remoteInterface"):WaitForChild("interactions"):WaitForChild("harvest"):FireServer(unpack(args))
+        end
+    end
+end
+
+AutoHarvest.MouseButton1Click:Connect(function()
+  print("Harvest All Enabled")
+  harvestCrop()
+end)
+
+AutoPlant.Name = "AutoPlant"
+AutoPlant.Parent = MainFrame
+AutoPlant.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AutoPlant.Position = UDim2.new(0.0387657396, 0, 0.589181542, 0)
+AutoPlant.Size = UDim2.new(0.399098098, 0, 0.114661798, 0)
+AutoPlant.Font = Enum.Font.Unknown
+AutoPlant.Text = "Radial Plant"
+AutoPlant.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoPlant.TextScaled = true
+AutoPlant.TextSize = 14.000
+AutoPlant.TextWrapped = true
+
+local function plantCrop()
+  print(PlantType.Text)
+  for i, farm in ipairs(game:GetService("Workspace").farmland:GetChildren()) do
+      if farm:FindFirstChild("plant") and GetDistance(farm:FindFirstChild("farmland"), humanoidRootPart) >= -25 then
+          print("Already planted")
+      else
+          print("Successfully planted a crop")
+          local args = {
+              [1] = getShovel(),
+              [2] = getCropType(PlantType.Text),
+              [3] = farm
+          }
+          game:GetService("ReplicatedStorage"):WaitForChild("remoteInterface"):WaitForChild("interactions"):WaitForChild("plant"):FireServer(unpack(args))
+      end
+  end
+end
+
+AutoPlant.MouseButton1Click:Connect(function()
+  print("Plant All Enabled")
+  plantCrop()
+end)
+
+
+PlotBuilder.Name = "PlotBuilder"
+PlotBuilder.Parent = MainFrame
+PlotBuilder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlotBuilder.Position = UDim2.new(0.0387657396, 0, 0.426271975, 0)
+PlotBuilder.Size = UDim2.new(0.39369753, 0, 0.124416009, 0)
+PlotBuilder.Font = Enum.Font.Unknown
+PlotBuilder.Text = "Toggle Plotbuilder"
+PlotBuilder.TextColor3 = Color3.fromRGB(0, 0, 0)
+PlotBuilder.TextScaled = true
+PlotBuilder.TextSize = 14.000
+PlotBuilder.TextWrapped = true
+
+PlotBuilder.MouseButton1Click:Connect(function()
+  flag = not flag
+end)
+
+local function createPlot(x,z)
+  local args = {
+              [1] = getShovel(),
+              [2] = Vector3.new(x, humanoidRootPart.Position.y - 5, z),
+              [3] = 0
+          }
+  game:GetService("ReplicatedStorage"):WaitForChild("remoteInterface"):WaitForChild("interactions"):WaitForChild("createFarmland"):FireServer(unpack(args))
+end
+
+game:GetService('RunService').Stepped:connect(function()
+    if flag == true then
+        for i = -16, 16, 8 do
+            for j = -16, 16, 8 do
+                createPlot(humanoidRootPart.Position.x + i,humanoidRootPart.Position.z + j)
+            end
+        end
+  end
+end)
+
+Instruction.Name = "Instruction"
+Instruction.Parent = MainFrame
+Instruction.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Instruction.BackgroundTransparency = 1.000
+Instruction.Position = UDim2.new(0.459183753, 0, 0.430000007, 0)
+Instruction.Size = UDim2.new(0, 102, 0, 29)
+Instruction.Font = Enum.Font.Roboto
+Instruction.Text = "Write crop to plant here"
+Instruction.TextColor3 = Color3.fromRGB(255, 255, 255)
+Instruction.TextScaled = true
+Instruction.TextSize = 23.000
+Instruction.TextWrapped = true
+
+FarmingLabel.Name = "FarmingLabel"
+FarmingLabel.Parent = MainFrame
+FarmingLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FarmingLabel.BackgroundTransparency = 1.000
+FarmingLabel.Position = UDim2.new(0.0306122489, 0, 0.239999995, 0)
+FarmingLabel.Size = UDim2.new(0, 78, 0, 44)
+FarmingLabel.Font = Enum.Font.Highway
+FarmingLabel.Text = "Farming"
+FarmingLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+FarmingLabel.TextScaled = true
+FarmingLabel.TextSize = 23.000
+FarmingLabel.TextWrapped = true

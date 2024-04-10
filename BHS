@@ -1,0 +1,270 @@
+
+-- Objects
+
+local BanHammerSimulator = Instance.new("ScreenGui")
+local Background = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local MadebyCIRAXY3517 = Instance.new("TextLabel")
+local Hackers = Instance.new("TextButton")
+local Noobs = Instance.new("TextButton")
+local Doges = Instance.new("TextButton")
+local Pirates = Instance.new("TextButton")
+local DownBar = Instance.new("Frame")
+local X = Instance.new("TextButton")
+local OpenFrame = Instance.new("Frame")
+local OpenButton = Instance.new("TextButton")
+
+-- Properties
+
+BanHammerSimulator.Name = "Ban Hammer Simulator"
+BanHammerSimulator.Parent = game.CoreGui
+
+Background.Name = "Background"
+Background.Parent = BanHammerSimulator
+Background.Active = true
+Background.BackgroundColor3 = Color3.new(0.207843, 0.207843, 0.207843)
+Background.BorderSizePixel = 0
+Background.Position = UDim2.new(0.390772104, 0, 0.284369141, 0)
+Background.Selectable = true
+Background.Size = UDim2.new(0, 232, 0, 284)
+
+TopBar.Name = "TopBar"
+TopBar.Parent = Background
+TopBar.Active = true
+TopBar.BackgroundColor3 = Color3.new(0.152941, 0.152941, 0.152941)
+TopBar.BorderSizePixel = 0
+TopBar.ClipsDescendants = true
+TopBar.Selectable = true
+TopBar.Size = UDim2.new(0, 232, 0, 22)
+
+MadebyCIRAXY3517.Name = "Made by CIRAXY#3517"
+MadebyCIRAXY3517.Parent = Background
+MadebyCIRAXY3517.BackgroundColor3 = Color3.new(1, 1, 1)
+MadebyCIRAXY3517.BackgroundTransparency = 1
+MadebyCIRAXY3517.Position = UDim2.new(-0.0269693136, 0, 5.96046448e-08, 0)
+MadebyCIRAXY3517.Size = UDim2.new(0, 222, 0, 22)
+MadebyCIRAXY3517.Font = Enum.Font.ArialBold
+MadebyCIRAXY3517.Text = "Made by CIRAXY#3517"
+MadebyCIRAXY3517.TextColor3 = Color3.new(1, 0.921569, 0.0313726)
+MadebyCIRAXY3517.TextSize = 14
+MadebyCIRAXY3517.TextStrokeTransparency = 0
+MadebyCIRAXY3517.TextWrapped = true
+
+Hackers.Name = "Hackers"
+Hackers.Parent = Background
+Hackers.BackgroundColor3 = Color3.new(0.635294, 0.635294, 0.635294)
+Hackers.BorderColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+Hackers.BorderSizePixel = 5
+Hackers.Position = UDim2.new(0.067666769, 0, 0.11966525, 0)
+Hackers.Size = UDim2.new(0, 200, 0, 50)
+Hackers.Font = Enum.Font.SourceSans
+Hackers.Text = "(1 min) Farm Hackers."
+Hackers.TextColor3 = Color3.new(0, 0, 0)
+Hackers.TextSize = 20
+Hackers.TextStrokeColor3 = Color3.new(0.905882, 0.917647, 0.00784314)
+Hackers.TextStrokeTransparency = 0
+
+Noobs.Name = "Noobs"
+Noobs.Parent = Background
+Noobs.BackgroundColor3 = Color3.new(0.635294, 0.635294, 0.635294)
+Noobs.BorderColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+Noobs.BorderSizePixel = 5
+Noobs.Position = UDim2.new(0.067666769, 0, 0.32939443, 0)
+Noobs.Size = UDim2.new(0, 200, 0, 50)
+Noobs.Font = Enum.Font.SourceSans
+Noobs.Text = "(1 min) Farm Noobs."
+Noobs.TextColor3 = Color3.new(0, 0, 0)
+Noobs.TextSize = 20
+Noobs.TextStrokeColor3 = Color3.new(0.905882, 0.917647, 0.00784314)
+Noobs.TextStrokeTransparency = 0
+Noobs.TextWrapped = true
+
+Doges.Name = "Doges"
+Doges.Parent = Background
+Doges.BackgroundColor3 = Color3.new(0.635294, 0.635294, 0.635294)
+Doges.BorderColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+Doges.BorderSizePixel = 5
+Doges.Position = UDim2.new(0.067666769, 0, 0.544010758, 0)
+Doges.Size = UDim2.new(0, 200, 0, 50)
+Doges.Font = Enum.Font.SourceSans
+Doges.Text = "(1 min) Farm Doges."
+Doges.TextColor3 = Color3.new(0, 0, 0)
+Doges.TextSize = 20
+Doges.TextStrokeColor3 = Color3.new(0.905882, 0.917647, 0.00784314)
+Doges.TextStrokeTransparency = 0
+
+Pirates.Name = "Pirates"
+Pirates.Parent = Background
+Pirates.BackgroundColor3 = Color3.new(0.635294, 0.635294, 0.635294)
+Pirates.BorderColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+Pirates.BorderSizePixel = 5
+Pirates.Position = UDim2.new(0.0676667988, 0, 0.741538703, 0)
+Pirates.Size = UDim2.new(0, 200, 0, 50)
+Pirates.Font = Enum.Font.SourceSans
+Pirates.Text = "(Inf loop) Farm Pirates."
+Pirates.TextColor3 = Color3.new(0, 0, 0)
+Pirates.TextSize = 20
+Pirates.TextStrokeColor3 = Color3.new(0.905882, 0.917647, 0.00784314)
+Pirates.TextStrokeTransparency = 0
+
+DownBar.Name = "DownBar"
+DownBar.Parent = Background
+DownBar.BackgroundColor3 = Color3.new(0.901961, 1, 0)
+DownBar.BorderColor3 = Color3.new(1, 1, 0)
+DownBar.BorderSizePixel = 0
+DownBar.Position = UDim2.new(0, 0, 0.96830982, 0)
+DownBar.Size = UDim2.new(0, 232, 0, 9)
+
+X.Name = "X"
+X.Parent = Background
+X.BackgroundColor3 = Color3.new(1, 0, 0.0156863)
+X.BorderSizePixel = 0
+X.Position = UDim2.new(0.905172408, 0, 0, 0)
+X.Size = UDim2.new(0, 22, 0, 22)
+X.Font = Enum.Font.Arcade
+X.Text = "X"
+X.TextColor3 = Color3.new(0, 0, 0)
+X.TextScaled = true
+X.TextSize = 14
+X.TextWrapped = true
+
+OpenFrame.Name = "Open Frame"
+OpenFrame.Parent = BanHammerSimulator
+OpenFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+OpenFrame.Position = UDim2.new(0, 0, 0.595103562, 0)
+OpenFrame.Size = UDim2.new(0, 100, 0, 33)
+
+OpenButton.Parent = OpenFrame
+OpenButton.BackgroundColor3 = Color3.new(0.227451, 0.227451, 0.227451)
+OpenButton.BorderColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+OpenButton.BorderSizePixel = 5
+OpenButton.Position = UDim2.new(-0.0571428575, 0, 0.136271179, 0)
+OpenButton.Size = UDim2.new(0, 105, 0, 36)
+OpenButton.Font = Enum.Font.ArialBold
+OpenButton.Text = "Open"
+OpenButton.TextColor3 = Color3.new(0, 0, 0)
+OpenButton.TextSize = 14
+OpenButton.TextStrokeColor3 = Color3.new(0.905882, 0.917647, 0.00784314)
+OpenButton.TextStrokeTransparency = 0
+
+-- Scripts 
+
+Hackers.MouseButton1Down:connect(function() -- Hackers Button
+
+-- Farm Hackers for 1,40 minutes
+
+local FarmHackers = 0
+
+while true do
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.NPCs.Hackers.NPCs.Hacker.UpperTorso.CFrame
+
+wait()
+
+FarmHackers = FarmHackers + 1
+
+wait()
+
+wait()
+
+wait()
+
+if FarmHackers == 1000 then
+
+break
+end
+end
+
+end)
+
+Noobs.MouseButton1Down:connect(function() -- Noobs Button
+
+-- Farm Noobs for 1,40 minutes
+
+local FarmNoobs = 0
+
+wait()
+
+while true do
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.NPCs.Noobs.NPCs.Noob.UpperTorso.CFrame
+
+wait()
+
+wait()
+
+wait()
+
+FarmNoobs = FarmNoobs + 1
+
+if FarmNoobs == 1000 then
+
+break
+
+end
+end
+
+end)
+
+Doges.MouseButton1Down:connect(function() -- Doges Button
+
+-- Farm doges for 1,40 minutes
+
+local FarmDoges = 0
+
+while true do
+
+wait()
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.NPCs.Doges.NPCs.Doge.UpperTorso.CFrame
+
+wait()
+
+wait()
+
+FarmDoges = FarmDoges + 1
+
+wait()
+
+if FarmDoges == 1000 then
+
+break
+
+end
+end
+
+end)
+
+Pirates.MouseButton1Down:connect(function() -- Pirates Button
+
+-- Farm Pirates inf
+
+while true do
+
+wait()
+
+wait()
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.NPCs.Pirates.NPCs.Pirate.UpperTorso.CFrame
+
+wait()
+
+wait()
+
+end 
+
+end)
+
+-- Open/Close
+
+X.MouseButton1Down:connect(function()
+
+Background:TweenPosition(UDim2.new(0.391,0,0.-2,0), 'Out', 'Bounce', 1)
+
+end)
+
+OpenButton.MouseButton1Down:connect(function()
+
+Background:TweenPosition(UDim2.new(0.391,0,0.358,0), 'Out', 'Bounce', 2)
+
+end)
